@@ -3,6 +3,10 @@ import { Routes, Route, Navigate } from 'react-router';
 import cookie from 'cookie';
 import AdminDashboard from './components/AdminDashboard';
 import Login from './components/Login';
+import Listings from './containers/Listings';
+import Details from './components/Details';
+import AddNewListing from './components/AddNewListing';
+// import { Details } from '@mui/icons-material';
 
 //Todo: Write checkAuth function here
 //Todo: Check the cookies for a cookie called "loggedIn"
@@ -30,17 +34,11 @@ const Router = () => {
   return (
     <Routes>
       {/* Setting component prop to Home for protected home route */}
-      <Route
-        path='/'
-        element={
-          <ProtectedRoute
-            component={AdminDashboard}
-            isTacoGood='true'
-            size='Large Please'
-          />
-        }
-      />
+      <Route path='/' element={<ProtectedRoute component={AdminDashboard} />} />
       <Route path='/login' element={<Login />} />
+      <Route path='/listings' element={<Listings />} />
+      <Route path='/listings/:id' element={<Details />} />
+      <Route path='/addNewListing' element={<AddNewListing />} />
     </Routes>
   );
 };
