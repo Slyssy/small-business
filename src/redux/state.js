@@ -19,6 +19,7 @@ const state = {
       address: '1415 South Congress Ave., Austin, TX 78704',
     },
   ],
+  map: [],
 };
 
 export default state;

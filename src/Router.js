@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router';
 import cookie from 'cookie';
-import AdminDashboard from './components/AdminDashboard';
+import AdminDashboard from './containers/AdminDashboard';
 import Login from './components/Login';
 import Listings from './containers/Listings';
-import Details from './components/Details';
+import Details from './containers/Details';
 import AddNewListing from './components/AddNewListing';
-// import { Details } from '@mui/icons-material';
+import Map from './components/Map';
 
 //Todo: Write checkAuth function here
 //Todo: Check the cookies for a cookie called "loggedIn"
@@ -39,6 +39,7 @@ const Router = () => {
       <Route path='/listings' element={<Listings />} />
       <Route path='/listings/:id' element={<Details />} />
       <Route path='/addNewListing' element={<AddNewListing />} />
+      <Route path='/map' element={<Map />} />
     </Routes>
   );
 };

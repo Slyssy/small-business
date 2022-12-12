@@ -1,4 +1,3 @@
-import { CastRounded } from '@mui/icons-material';
 import { combineReducers } from 'redux';
 
 const user = (state = null) => state;
@@ -10,10 +9,19 @@ const listings = (state = [], action) => {
     case 'DELETE_LISTING':
       const listings = [...state];
       listings.splice(action.value, 1);
-      return CastRounded;
+      return listings;
     default:
       return state;
   }
 };
 
-export default combineReducers({ user, listings });
+const map = (state = [], action) => {
+  switch (action.type) {
+    case 'GET_COORDINATES':
+      return action.value;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ user, listings, map });

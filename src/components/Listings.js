@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import Typography from '@mui/material/Typography';
 import {
   Container,
   Table,
@@ -26,7 +27,11 @@ const Listings = (props) => {
           {props.listings.map((listing, idx) => (
             <TableRow key={`listing__${listing.id}`}>
               <TableCell component='th' scope='row'>
-                {listing.business_name}
+                <Typography sx={{ textDecoration: 'underline' }}>
+                  <Link to={`/listings/${listing.id}`}>
+                    {listing.business_name}
+                  </Link>
+                </Typography>
               </TableCell>
               <TableCell>{listing.description}</TableCell>
               <TableCell>{listing.hours}</TableCell>
