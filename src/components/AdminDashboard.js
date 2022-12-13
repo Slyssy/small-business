@@ -42,6 +42,7 @@ const AdminDashboard = (props) => {
                 <DeleteIcon
                   onClick={() => props.deleteListing(idx)}
                   className='icon text-red'
+                  color='warning'
                 />
               </TableCell>
             </TableRow>
