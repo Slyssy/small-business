@@ -19,6 +19,14 @@ const theme = createTheme({
     },
   },
 });
+
+const checkAuth = () => {
+  const cookies = cookie.parse(document.cookie);
+  // * Checking cookie object to see if cookies.loggedIn is truthy.
+  // console.log(cookies.loggedIn);
+  return cookies['loggedIn'] ? true : false;
+};
+
 const Navigation = () => {
   const navigate = useNavigate();
 
@@ -32,7 +40,7 @@ const Navigation = () => {
           <ul className='nav-list'>
             <li className='nav-list-item'>
               <Typography style={{ color: 'white' }}>
-                <Link to='/'>Listings</Link>
+                <Link to='/listings'>Listings</Link>
               </Typography>
             </li>
             <li
@@ -44,7 +52,9 @@ const Navigation = () => {
                 navigate('/login');
               }}
             >
-              <Typography style={{ color: 'white' }}>Login</Typography>
+              <Typography style={{ color: 'white' }}>
+                {checkAuth() ? 'Logout' : 'Login'}
+              </Typography>
             </li>
           </ul>
         </Toolbar>

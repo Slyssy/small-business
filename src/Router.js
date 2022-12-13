@@ -10,10 +10,11 @@ import Map from './components/Map';
 
 //Todo: Write checkAuth function here
 //Todo: Check the cookies for a cookie called "loggedIn"
-// # Cookie NPM Docs can be found here...
+
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);
   // * Checking cookie object to see if cookies.loggedIn is truthy.
+  // console.log(cookies.loggedIn);
   return cookies['loggedIn'] ? true : false;
 };
 
@@ -33,12 +34,14 @@ const ProtectedRoute = (props) => {
 const Router = () => {
   return (
     <Routes>
-      {/* Setting component prop to Home for protected home route */}
       <Route path='/' element={<ProtectedRoute component={AdminDashboard} />} />
       <Route path='/login' element={<Login />} />
       <Route path='/listings' element={<Listings />} />
       <Route path='/listings/:id' element={<Details />} />
-      <Route path='/addNewListing' element={<AddNewListing />} />
+      <Route
+        path='/addNewListing'
+        element={<ProtectedRoute component={AddNewListing} />}
+      />
       <Route path='/map' element={<Map />} />
     </Routes>
   );

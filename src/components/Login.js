@@ -19,6 +19,7 @@ const Login = () => {
   const handleTextChange = (e) => {
     // console.log(e.target);
     const { name, value } = e.target;
+    // console.log(name, value);
     setState((prevState) => {
       return {
         ...prevState,
@@ -73,7 +74,7 @@ const Login = () => {
           />
           <ThemeProvider theme={theme}>
             <Button
-              onClick={Login}
+              onClick={login}
               type='submit'
               className='login-button'
               variant='contained'

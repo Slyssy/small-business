@@ -1,6 +1,12 @@
 import Geocode from 'react-geocode';
 
 const apiKey = process.env.REACT_APP_API_KEY;
+export const login = (user) => {
+  return {
+    type: 'LOGIN',
+    value: user
+  }
+}
 
 export const addListing = (listing) => {
   return {

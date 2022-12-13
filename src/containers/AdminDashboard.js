@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AdminDashboard from '../components/AdminDashboard';
-import { deleteListing } from '../redux/action';
+import { deleteListing } from '../redux/actions';
 
 const mapStateToProps = (state) => {
   return {

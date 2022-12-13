@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Details from '../components/Details';
-import { getCoordinates } from '../redux/action';
+import { getCoordinates } from '../redux/actions';
 
 const mapStateToProps = (state) => {
   return {
