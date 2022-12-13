@@ -17,16 +17,6 @@ const Details = (props) => {
     props.getCoordinates(listing.address);
   }, []);
 
-  // Geocode.setApiKey(process.env.REACT_APP_API_KEY);
-  // Geocode.setLanguage('en');
-  // Geocode.setLocationType('ROOFTOP');
-  // let lat;
-  // let lng;
-  // Geocode.fromAddress(listing.address).then((response) => {
-  //   const result = response.results[0].geometry.location;
-  //   console.log(result);
-  // });
-  // console.log('Lat: ', lat, 'Long: ', lng);
   return (
     <Container maxWidth='sm' sx={{ marginTop: '2em' }}>
       <Typography variant='h4' gutterBottom>

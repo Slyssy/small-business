@@ -12,6 +12,7 @@ import {
 
 const Listings = (props) => {
   console.log(props);
+
   return (
     <Container>
       <Table>
@@ -27,7 +28,10 @@ const Listings = (props) => {
           {props.listings.map((listing, idx) => (
             <TableRow key={`listing__${listing.id}`}>
               <TableCell component='th' scope='row'>
-                <Typography sx={{ textDecoration: 'underline' }}>
+                <Typography
+                  sx={{ textDecoration: 'underline' }}
+                  onClick={props.getCoordinates(listing.address)}
+                >
                   <Link to={`/listings/${listing.id}`}>
                     {listing.business_name}
                   </Link>
