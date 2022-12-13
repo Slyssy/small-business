@@ -18,22 +18,17 @@ export const deleteListing = (index) => {
 
 // * Create an action to get latitude and longitude.
 export const getCoordinates = (address) => {
-  console.log(address);
   return (dispatch) => {
     Geocode.setApiKey(apiKey);
     Geocode.setLanguage('en');
     Geocode.setLocationType('ROOFTOP');
-    Geocode.fromAddress(address)
-      .then((res) => {
-        return res.results[0].geometry.location;
-      })
-      .then((response) => {
-        const action = {
-          type: 'GET_COORDINATES',
-          value: response,
-        };
-        console.log(action);
-        dispatch(action);
-      });
+    Geocode.fromAddress(address).then((res) => {
+      const action = {
+        type: 'GET_COORDINATES',
+        value: res.results[0].geometry.location,
+      };
+      console.log(action);
+      dispatch(action);
+    });
   };
 };

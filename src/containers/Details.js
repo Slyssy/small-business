@@ -5,12 +5,13 @@ import { getCoordinates } from '../redux/action';
 const mapStateToProps = (state) => {
   return {
     listings: state.listings,
+    coordinates: state.coordinates,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getCoordinates: () => dispatch(getCoordinates()),
+    getCoordinates: (address) => dispatch(getCoordinates(address)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Details);

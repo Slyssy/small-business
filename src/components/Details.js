@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Geocode from 'react-geocode';
+// import Geocode from 'react-geocode';
 import MyMap from './Map';
-import { ActionTypes } from '@mui/base';
 
 const Details = (props) => {
   console.log(props);
@@ -14,9 +13,9 @@ const Details = (props) => {
   const listing = props.listings.find((listing) => listing.id === +id);
   console.log(listing);
 
-  useEffect(() => {
-    props.getCoordinates(listing.address);
-  });
+  // useEffect(() => {
+  //   props.getCoordinates(listing.address);
+  // });
   // Geocode.setApiKey(process.env.REACT_APP_API_KEY);
   // Geocode.setLanguage('en');
   // Geocode.setLocationType('ROOFTOP');
@@ -41,7 +40,7 @@ const Details = (props) => {
       <Typography variant='body1' gutterBottom>
         {listing.description}
       </Typography>
-      <MyMap lat={55} lng={55} />
+      <MyMap lat={props.coordinates.lat} lng={props.coordinates.lng} />
     </Container>
   );
 };

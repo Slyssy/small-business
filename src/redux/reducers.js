@@ -15,7 +15,7 @@ const listings = (state = [], action) => {
   }
 };
 
-const map = (state = [], action) => {
+const coordinates = (state = [], action) => {
   switch (action.type) {
     case 'GET_COORDINATES':
       return action.value;
@@ -24,4 +24,4 @@ const map = (state = [], action) => {
   }
 };
 
-export default combineReducers({ user, listings, map });
+export default combineReducers({ user, listings, coordinates });
