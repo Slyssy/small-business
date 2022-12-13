@@ -13,9 +13,10 @@ const Details = (props) => {
   const listing = props.listings.find((listing) => listing.id === +id);
   console.log(listing);
 
-  // useEffect(() => {
-  //   props.getCoordinates(listing.address);
-  // });
+  useEffect(() => {
+    props.getCoordinates(listing.address);
+  }, []);
+
   // Geocode.setApiKey(process.env.REACT_APP_API_KEY);
   // Geocode.setLanguage('en');
   // Geocode.setLocationType('ROOFTOP');
