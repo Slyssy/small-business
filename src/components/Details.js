@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import MyMap from './Map';
 
 const Details = (props) => {
-  console.log(props);
+  // console.log(props);
 
   const { id } = useParams();
 
@@ -16,20 +16,25 @@ const Details = (props) => {
   useEffect(() => {
     props.getCoordinates(listing.address);
     console.log(props.getCoordinates(listing.address));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <Container maxWidth='sm' sx={{ marginTop: '2em' }}>
-      <Typography variant='h4' gutterBottom>
+    <Container maxWidth='md' sx={{ marginTop: '2em' }}>
+      <Typography variant='h4' gutterBottom sx={{ fontWeight: 'bold' }}>
         {listing.business_name}
       </Typography>
-      <Typography variant='subtitle1' gutterBottom>
+      <Typography variant='subtitle1' gutterBottom sx={{ fontWeight: 'bold' }}>
         {listing.address}
       </Typography>
-      <Typography variant='subtitle1' gutterBottom>
+      <Typography variant='subtitle1' gutterBottom sx={{ fontWeight: 'bold' }}>
         {listing.hours}
       </Typography>
-      <Typography variant='body1' gutterBottom>
+      <Typography
+        variant='body1'
+        gutterBottom
+        sx={{ width: '70%', marginBottom: '24px' }}
+      >
         {listing.description}
       </Typography>
       <MyMap lat={props.coordinates.lat} lng={props.coordinates.lng} />

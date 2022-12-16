@@ -10,7 +10,7 @@ export default function Header() {
       <AppBar position='static'>
         <Toolbar>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            My Music App
+            Austin Small Business
           </Typography>
         </Toolbar>
       </AppBar>

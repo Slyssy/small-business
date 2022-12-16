@@ -20,7 +20,7 @@ const checkAuth = () => {
 };
 
 const Listings = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <Container>
@@ -40,7 +40,7 @@ const Listings = (props) => {
               <TableCell component='th' scope='row'>
                 <Typography
                   sx={{ textDecoration: 'underline' }}
-                  // onClick={props.getCoordinates(listing.address)}
+                  // onClick={() => props.getCoordinates(listing.address)}
                 >
                   <Link to={`/listings/${listing.id}`}>
                     {listing.business_name}

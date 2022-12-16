@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Container, TextField, Button, Typography } from '@mui/material';
 import MyMap from './Map';
-import { Action } from '@remix-run/router';
 
 const AddListing = (props) => {
-  console.log(props);
+  // console.log(props);
   const [listing, setListing] = useState({
     business_name: '',
     address: '',

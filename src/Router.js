@@ -39,7 +39,7 @@ const Router = () => {
       <Route path='/listings' element={<Listings />} />
       <Route path='/listings/:id' element={<Details />} />
       <Route
-        path='/addNewListing'
+        path='/addListing'
         element={<ProtectedRoute component={AddListing} />}
       />
       <Route path='/map' element={<Map />} />

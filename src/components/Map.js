@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import Spinner from './Spinner';
 const MyMap = (props) => {
-  console.log(props);
+  // console.log(props);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
@@ -13,7 +13,8 @@ const MyMap = (props) => {
 };
 
 const Map = (props) => {
-  console.log(props);
+  // console.log(props);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const center = useMemo(() => ({ lat: props.lat, lng: props.lng }), []);
   return (
     <GoogleMap zoom={15} center={center} mapContainerClassName='map-container'>

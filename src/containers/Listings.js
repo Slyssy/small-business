@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
   return {
     user: state.user,
     listings: state.listings,
+    coordinates: state.coordinates,
   };
 };
 

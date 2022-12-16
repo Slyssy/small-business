@@ -1,12 +1,12 @@
-// import { connect } from 'react-redux';
-// import { Map } from '@mui/icons-material';
+import { connect } from 'react-redux';
+import Map from '../components/Map';
 // import { getCoordinates } from '../redux/action';
 
-// const mapStateToProps = (state) => {
-//   return {
-//     coordinates: state.coordinates,
-//   };
-// };
+const mapStateToProps = (state) => {
+  return {
+    coordinates: state.coordinates,
+  };
+};
 
 // const mapDispatchToProps = (dispatch) => {
 //   return {
@@ -14,4 +14,4 @@
 //   };
 // };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Map);
+export default connect(mapStateToProps, null)(Map);

@@ -43,6 +43,13 @@ const Navigation = () => {
                 <Link to='/listings'>Listings</Link>
               </Typography>
             </li>
+            {checkAuth() ? (
+              <li className='nav-list-item'>
+                <Typography style={{ color: 'white' }}>
+                  <Link to='/addListing'>Add</Link>
+                </Typography>
+              </li>
+            ) : null}
             <li
               className='nav-list-item'
               onClick={() => {
