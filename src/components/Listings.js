@@ -9,6 +9,15 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import cookie from 'cookie';
+
+const checkAuth = () => {
+  const cookies = cookie.parse(document.cookie);
+  // * Checking cookie object to see if cookies.loggedIn is truthy.
+  // console.log(cookies.loggedIn);
+  return cookies['loggedIn'] ? true : false;
+};
 
 const Listings = (props) => {
   console.log(props);
@@ -22,6 +31,7 @@ const Listings = (props) => {
             <TableCell>Description</TableCell>
             <TableCell>Hours</TableCell>
             <TableCell>Address</TableCell>
+            {checkAuth() ? <TableCell>Delete</TableCell> : null}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -30,7 +40,7 @@ const Listings = (props) => {
               <TableCell component='th' scope='row'>
                 <Typography
                   sx={{ textDecoration: 'underline' }}
-                  onClick={props.getCoordinates(listing.address)}
+                  // onClick={props.getCoordinates(listing.address)}
                 >
                   <Link to={`/listings/${listing.id}`}>
                     {listing.business_name}
@@ -40,6 +50,15 @@ const Listings = (props) => {
               <TableCell>{listing.description}</TableCell>
               <TableCell>{listing.hours}</TableCell>
               <TableCell>{listing.address}</TableCell>
+              {checkAuth() ? (
+                <TableCell>
+                  <DeleteIcon
+                    onClick={() => props.deleteListing(idx)}
+                    className='icon text-red'
+                    color='warning'
+                  />
+                </TableCell>
+              ) : null}
             </TableRow>
           ))}
         </TableBody>

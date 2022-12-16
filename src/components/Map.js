@@ -1,14 +1,14 @@
 import React from 'react';
 import { useMemo } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
-
+import Spinner from './Spinner';
 const MyMap = (props) => {
   console.log(props);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
 
-  if (!isLoaded) return <div>Loading...</div>;
+  if (!isLoaded) return <Spinner />;
   return <Map lat={props.lat} lng={props.lng} />;
 };
 

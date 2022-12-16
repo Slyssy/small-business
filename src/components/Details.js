@@ -15,6 +15,7 @@ const Details = (props) => {
 
   useEffect(() => {
     props.getCoordinates(listing.address);
+    console.log(props.getCoordinates(listing.address));
   }, []);
 
   return (

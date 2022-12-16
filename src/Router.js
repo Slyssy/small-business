@@ -5,7 +5,7 @@ import AdminDashboard from './containers/AdminDashboard';
 import Login from './components/Login';
 import Listings from './containers/Listings';
 import Details from './containers/Details';
-import AddNewListing from './components/AddNewListing';
+import AddListing from './containers/AddListing';
 import Map from './components/Map';
 
 //Todo: Write checkAuth function here
@@ -34,13 +34,13 @@ const ProtectedRoute = (props) => {
 const Router = () => {
   return (
     <Routes>
-      <Route path='/' element={<ProtectedRoute component={AdminDashboard} />} />
+      <Route path='/' element={<ProtectedRoute component={Listings} />} />
       <Route path='/login' element={<Login />} />
       <Route path='/listings' element={<Listings />} />
       <Route path='/listings/:id' element={<Details />} />
       <Route
         path='/addNewListing'
-        element={<ProtectedRoute component={AddNewListing} />}
+        element={<ProtectedRoute component={AddListing} />}
       />
       <Route path='/map' element={<Map />} />
     </Routes>
