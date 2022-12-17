@@ -3,24 +3,29 @@ import { useParams } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 // import Geocode from 'react-geocode';
-import MyMap from './Map';
+import MyMap from '../containers/Map';
 
 const Details = (props) => {
-  // console.log(props);
+  console.log(props);
 
   const { id } = useParams();
 
   const listing = props.listings.find((listing) => listing.id === +id);
-  console.log(listing);
+  // console.log(listing);
 
-  useEffect(() => {
-    props.getCoordinates(listing.address);
-    console.log(props.getCoordinates(listing.address));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   props.getCoordinates(listing.address);
+  //   console.log(props.getCoordinates(listing.address));
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
-    <Container maxWidth='md' sx={{ marginTop: '2em' }}>
+    <Container
+      maxWidth='md'
+      sx={{
+        marginTop: '2em',
+      }}
+    >
       <Typography variant='h4' gutterBottom sx={{ fontWeight: 'bold' }}>
         {listing.business_name}
       </Typography>
@@ -33,7 +38,7 @@ const Details = (props) => {
       <Typography
         variant='body1'
         gutterBottom
-        sx={{ width: '70%', marginBottom: '24px' }}
+        sx={{ width: '80%', marginBottom: '24px' }}
       >
         {listing.description}
       </Typography>

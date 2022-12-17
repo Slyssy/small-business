@@ -20,7 +20,7 @@ const checkAuth = () => {
 };
 
 const Listings = (props) => {
-  // console.log(props);
+  console.log(props);
 
   return (
     <Container>
@@ -35,32 +35,34 @@ const Listings = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.listings.map((listing, idx) => (
-            <TableRow key={`listing__${listing.id}`}>
-              <TableCell component='th' scope='row'>
-                <Typography
-                  sx={{ textDecoration: 'underline' }}
-                  // onClick={() => props.getCoordinates(listing.address)}
-                >
-                  <Link to={`/listings/${listing.id}`}>
-                    {listing.business_name}
-                  </Link>
-                </Typography>
-              </TableCell>
-              <TableCell>{listing.description}</TableCell>
-              <TableCell>{listing.hours}</TableCell>
-              <TableCell>{listing.address}</TableCell>
-              {checkAuth() ? (
-                <TableCell>
-                  <DeleteIcon
-                    onClick={() => props.deleteListing(idx)}
-                    className='icon text-red'
-                    color='warning'
-                  />
+          {props.listings.map((listing, idx) => {
+            return (
+              <TableRow key={`listing__${listing.id}`}>
+                <TableCell component='th' scope='row'>
+                  <Typography
+                    sx={{ textDecoration: 'underline' }}
+                    onClick={() => props.getCoordinates(listing.address)}
+                  >
+                    <Link to={`/listings/${listing.id}`}>
+                      {listing.business_name}
+                    </Link>
+                  </Typography>
                 </TableCell>
-              ) : null}
-            </TableRow>
-          ))}
+                <TableCell>{listing.description}</TableCell>
+                <TableCell>{listing.hours}</TableCell>
+                <TableCell>{listing.address}</TableCell>
+                {checkAuth() ? (
+                  <TableCell>
+                    <DeleteIcon
+                      onClick={() => props.deleteListing(idx)}
+                      className='icon text-red'
+                      color='warning'
+                    />
+                  </TableCell>
+                ) : null}
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
     </Container>

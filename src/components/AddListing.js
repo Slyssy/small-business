@@ -37,13 +37,14 @@ const AddListing = (props) => {
 
   return (
     <Container
+      maxWidth='lg'
       sx={{
         display: 'flex',
-        justifyContent: 'space-between',
+        gap: '2em',
         marginTop: '50px',
       }}
     >
-      <Box sx={{ width: '60%', maxWidth: '520px' }}>
+      <Box sx={{ width: '50%', maxWidth: '520px' }}>
         <TextField
           required
           value={listing.name}
@@ -103,7 +104,11 @@ const AddListing = (props) => {
           Enter Address to Display Map
         </Typography>
       ) : (
-        <MyMap lat={props.coordinates.lat} lng={props.coordinates.lng} />
+        <MyMap
+          lat={props.coordinates.lat}
+          lng={props.coordinates.lng}
+          className='new__business__map'
+        />
       )}
     </Container>
   );
