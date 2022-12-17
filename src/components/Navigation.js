@@ -37,7 +37,7 @@ const Navigation = () => {
       <AppBar position='relative' color='primary'>
         <Toolbar>
           <Typography variant='h6' style={{ flexGrow: '1', color: 'white' }}>
-            Austin Small Business
+            Stevie's Super Cool Local Business Directory
           </Typography>
           <ul className='nav-list'>
             <li className='nav-list-item'>
