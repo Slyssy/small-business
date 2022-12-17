@@ -6,18 +6,14 @@ import Typography from '@mui/material/Typography';
 import MyMap from '../containers/Map';
 
 const Details = (props) => {
-  console.log(props);
+  // console.log(props);
 
   const { id } = useParams();
 
   const listing = props.listings.find((listing) => listing.id === +id);
   // console.log(listing);
 
-  // useEffect(() => {
-  //   props.getCoordinates(listing.address);
-  //   console.log(props.getCoordinates(listing.address));
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+
 
   return (
     <Container

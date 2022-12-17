@@ -33,7 +33,7 @@ export const getCoordinates = (address) => {
         type: 'GET_COORDINATES',
         value: res.results[0].geometry.location,
       };
-      console.log(action);
+      // console.log(action);
       dispatch(action);
     });
   };

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Listings from '../components/Listings';
-import { getCoordinates } from '../redux/actions';
+import { getCoordinates, deleteListing } from '../redux/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getCoordinates: (address) => dispatch(getCoordinates(address)),
+    deleteListing: (index) => dispatch(deleteListing(index)),
   };
 };
 

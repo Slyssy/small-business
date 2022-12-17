@@ -40,7 +40,7 @@ export default function LoginBar(props) {
             sx={{ marginLeft: '24px', marginTop: '4px' }}
             style={{ color: '#a0a0a9' }}
           >
-            Logged In as {props.user.slice(-1)[0].username}
+            {/* Logged In as {props.user.slice(-1)[0].username} */}
           </Typography>
         </AppBar>
       </ThemeProvider>

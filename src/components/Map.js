@@ -7,8 +7,8 @@ const containerStyle = {
 };
 
 function Map(props) {
-  console.log(props);
-  console.log('lat: ', props.lat, 'lng: ', props.lng);
+  // console.log(props);
+  // console.log('lat: ', props.lat, 'lng: ', props.lng);
   const center = {
     lat: props.lat,
     lng: props.lng,
@@ -17,7 +17,7 @@ function Map(props) {
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
-
+  // eslint-disable-next-line no-unused-vars
   const [map, setMap] = React.useState(null);
   const [zoom, setZoom] = React.useState();
   const onLoad = React.useCallback(function callback(map) {

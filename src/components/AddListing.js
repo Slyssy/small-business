@@ -31,7 +31,7 @@ const AddListing = (props) => {
   const handleSave = (e) => {
     e.preventDefault();
     const payload = { ...listing };
-    console.log(payload);
+    // console.log(payload);
     props.addListing(payload);
   };
 

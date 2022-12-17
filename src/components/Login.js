@@ -28,7 +28,7 @@ const Login = (props) => {
       };
     });
   };
-  console.log(user);
+  // console.log(user);
   const login = (e) => {
     e.preventDefault();
     // # Send POST request to server for user.
