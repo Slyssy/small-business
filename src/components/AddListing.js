@@ -15,7 +15,7 @@ const AddListing = (props) => {
   const handleTextChange = (e) => {
     // console.log(e.target);
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setListing((prevState) => {
       return {
         ...prevState,
@@ -27,6 +27,7 @@ const AddListing = (props) => {
   const handleCoordinates = () => {
     props.getCoordinates(listing.address);
   };
+
   const handleSave = (e) => {
     e.preventDefault();
     const payload = { ...listing };

@@ -8,10 +8,11 @@ import {
   createTheme,
 } from '@mui/material';
 
-const Login = () => {
+const Login = (props) => {
+  // console.log(props);
   const navigate = useNavigate();
 
-  const [state, setState] = useState({
+  const [user, setUser] = useState({
     username: '',
     password: '',
   });
@@ -20,18 +21,19 @@ const Login = () => {
     // console.log(e.target);
     const { name, value } = e.target;
     // console.log(name, value);
-    setState((prevState) => {
+    setUser((prevState) => {
       return {
         ...prevState,
         [name]: value,
       };
     });
   };
-
+  console.log(user);
   const login = (e) => {
     e.preventDefault();
     // # Send POST request to server for user.
-
+    const payload = { ...user };
+    props.userLogin(payload);
     // # If successful...
     //Todo: set cookie here
     //Todo: set loggedIn = true and max-age = 60*1000 (one minute)
@@ -57,7 +59,7 @@ const Login = () => {
           <TextField
             required
             onChange={handleTextChange}
-            value={state.username}
+            value={user.username}
             name='username'
             label='Username'
             type='text'
@@ -66,7 +68,7 @@ const Login = () => {
           <TextField
             required
             onChange={handleTextChange}
-            value={state.password}
+            value={user.password}
             name='password'
             label='Password'
             type='password'
