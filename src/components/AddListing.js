@@ -1,9 +1,21 @@
 import React, { useState } from 'react';
-import { Box, Container, TextField, Button, Typography } from '@mui/material';
+import {
+  Box,
+  TextField,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from '@mui/material';
+import mapIcon from '../images/mapIcon.jpg';
 import MyMap from './Map';
 
 const AddListing = (props) => {
   // console.log(props);
+  const [open, setOpen] = useState(true);
+
   const [listing, setListing] = useState({
     business_name: '',
     address: '',
@@ -11,6 +23,14 @@ const AddListing = (props) => {
     description: '',
     id: props.listings.length + 1,
   });
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleTextChange = (e) => {
     // console.log(e.target);
@@ -28,89 +48,96 @@ const AddListing = (props) => {
     props.getCoordinates(listing.address);
   };
 
-  const handleSave = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const payload = { ...listing };
     // console.log(payload);
     props.addListing(payload);
+    handleClose();
   };
 
   return (
-    <Container
-      maxWidth='lg'
-      sx={{
-        display: 'flex',
-        gap: '2em',
-        marginTop: '50px',
-      }}
-    >
-      <Box sx={{ width: '50%', maxWidth: '520px' }}>
-        <TextField
-          required
-          value={listing.name}
-          onChange={handleTextChange}
-          name='business_name'
-          label='Name'
-          type='text'
-          variant='standard'
-          fullWidth={true}
-          sx={{ display: 'block' }}
-        />
-        <TextField
-          required
-          value={listing.address}
-          onChange={handleTextChange}
-          onBlur={handleCoordinates}
-          name='address'
-          label='Address'
-          type='text'
-          variant='standard'
-          fullWidth={true}
-          sx={{ display: 'block' }}
-        />
-        <TextField
-          required
-          value={listing.hours}
-          onChange={handleTextChange}
-          name='hours'
-          label='Hours'
-          type='text'
-          variant='standard'
-          fullWidth={true}
-          sx={{ display: 'block' }}
-        />
-        <TextField
-          required
-          value={listing.description}
-          onChange={handleTextChange}
-          name='description'
-          label='Description'
-          type='text'
-          variant='standard'
-          fullWidth={true}
-          sx={{ display: 'block' }}
-        />
-        <Button
-          variant='contained'
-          color='primary'
-          onClick={handleSave}
-          sx={{ marginTop: '16px', width: '50%' }}
-        >
-          Save
-        </Button>
-      </Box>
-      {!props.coordinates.lat ? (
-        <Typography variant='h5' gutterBottom>
-          Enter Address to Display Map
-        </Typography>
-      ) : (
-        <MyMap
-          lat={props.coordinates.lat}
-          lng={props.coordinates.lng}
-          className='new__business__map'
-        />
-      )}
-    </Container>
+    <>
+      <Button variant='contained' color='primary' onClick={handleClickOpen}>
+        Add New Listing
+      </Button>
+      <Dialog open={open} onClose={handleClose} maxWidth='xl'>
+        <DialogTitle>Add New Business Listing</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To add a new listing, simply fill out the form below and click
+            "Submit".
+          </DialogContentText>
+          <Box sx={{ display: 'flex', gap: '1em' }}>
+            <Box sx={{ width: '50%', maxWidth: '520px' }}>
+              <TextField
+                required
+                autoFocus
+                value={listing.name}
+                name='business_name'
+                label='Name'
+                margin='dense'
+                id='name'
+                type='text'
+                fullWidth
+                variant='standard'
+                onChange={handleTextChange}
+              />
+              <TextField
+                required
+                value={listing.address}
+                name='address'
+                label='Address'
+                margin='dense'
+                id='address'
+                type='text'
+                fullWidth
+                variant='standard'
+                onChange={handleTextChange}
+                onBlur={handleCoordinates}
+              />
+              <TextField
+                value={listing.hours}
+                name='hours'
+                label='Hours of Operation'
+                margin='dense'
+                id='hours'
+                type='text'
+                fullWidth
+                variant='standard'
+                onChange={handleTextChange}
+              />
+              <TextField
+                value={listing.description}
+                name='description'
+                label='Description'
+                margin='dense'
+                id='description'
+                type='text'
+                fullWidth
+                variant='standard'
+                onChange={handleTextChange}
+              />
+            </Box>
+            {!props.coordinates.lat ? (
+              <div className='image-container'>
+                <img className='map-icon' src={mapIcon} alt='Map Icon' />
+              </div>
+            ) : (
+              <MyMap
+                lat={props.coordinates.lat}
+                lng={props.coordinates.lng}
+                className='new__business__map'
+              />
+            )}
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 };
 

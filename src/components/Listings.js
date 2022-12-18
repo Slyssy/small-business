@@ -20,7 +20,7 @@ const checkAuth = () => {
 };
 
 const Listings = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <Container>
