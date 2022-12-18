@@ -1,5 +1,5 @@
 const state = {
-  user: [],
+  user: [{ username: 'default', password: 'PASSWORD' }],
   listings: [
     {
       open: false,

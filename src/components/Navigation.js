@@ -30,7 +30,7 @@ const checkAuth = () => {
 };
 
 const Navigation = (props) => {
-  console.log(props);
+  // console.log(props);
   const navigate = useNavigate();
 
   // const handleClickOpen = () => {};
