@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
   return {
     listings: state.listings,
     coordinates: state.coordinates,
+    dialogOpen: state.dialogOpen,
   };
 };
 

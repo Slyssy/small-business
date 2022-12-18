@@ -29,8 +29,11 @@ const checkAuth = () => {
   return cookies['loggedIn'] ? true : false;
 };
 
-const Navigation = () => {
+const Navigation = (props) => {
+  console.log(props);
   const navigate = useNavigate();
+
+  // const handleClickOpen = () => {};
 
   return (
     <ThemeProvider theme={theme}>
@@ -47,9 +50,9 @@ const Navigation = () => {
             </li>
             {checkAuth() ? (
               <li className='nav-list-item'>
-                <Typography style={{ color: 'white' }}>
-                  <Link to='/addListing'>Add</Link>
-                </Typography>
+                <Link to='/addListing'>
+                  <Typography style={{ color: 'white' }}>Add</Typography>
+                </Link>
               </li>
             ) : null}
             <li

@@ -2,6 +2,7 @@ const state = {
   user: [],
   listings: [
     {
+      open: false,
       id: 1,
       business_name: 'Muck & Fuss',
       hours: '11am - 9am',
@@ -9,6 +10,7 @@ const state = {
       address: `295 East San Antonio, Suite #101, New Braunfels, TX 78130`,
     },
     {
+      open: false,
       id: 2,
       business_name: `Gruene's Last Call`,
       hours: 'Tuesday - Thursday 4pm - 10pm Friday - Saturday 3pm - 11pm',
@@ -16,6 +18,7 @@ const state = {
       address: '2348 Gruene Lake Dr Suite A, New Braunfels, TX 78130',
     },
     {
+      open: false,
       id: 3,
       business_name: 'Huisache Grill',
       hours: '11am - 9pm Tuesday - Sunday',
@@ -23,6 +26,7 @@ const state = {
       address: '303 West San Antonio Street, New Braunfels, TX 78130',
     },
     {
+      open: false,
       id: 4,
       business_name: 'Goodwins Underground Speakeasy',
       hours: '7pm - 12am Monday - Saturday & Sunday 7pm - 10pm',
@@ -30,6 +34,7 @@ const state = {
       address: '1263 Gruene Road, New Braunfels, TX 78130',
     },
     {
+      open: false,
       id: 5,
       business_name: 'Home Slice Pizza',
       hours: '7pm - 12am Monday - Saturday & Sunday 7pm - 10pm',
@@ -38,6 +43,7 @@ const state = {
     },
   ],
   coordinates: [],
+  dialogOpen: false,
 };
 
 export default state;

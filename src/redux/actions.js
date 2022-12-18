@@ -38,3 +38,11 @@ export const getCoordinates = (address) => {
     });
   };
 };
+
+// * Open Dialog Box
+export const openDialog = () => {
+  return {
+    type: 'OPEN_DIALOG',
+    value: true,
+  };
+};

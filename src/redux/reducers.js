@@ -31,4 +31,12 @@ const coordinates = (state = [], action) => {
   }
 };
 
-export default combineReducers({ user, listings, coordinates });
+const dialogOpen = (state = false, action) => {
+  switch (action.type) {
+    case 'OPEN_DIALOG':
+      return action.value;
+    default:
+      return state;
+  }
+};
+export default combineReducers({ user, listings, coordinates, dialogOpen });
