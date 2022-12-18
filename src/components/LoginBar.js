@@ -22,6 +22,8 @@ const theme = createTheme({
 });
 
 export default function LoginBar(props) {
+  console.log(props);
+  const activeUser = props.user.slice(-1)[0].username;
   return (
     <Box sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={theme}>
@@ -40,7 +42,7 @@ export default function LoginBar(props) {
             sx={{ marginLeft: '24px', marginTop: '4px' }}
             style={{ color: '#a0a0a9' }}
           >
-            Logged In as {props.user.slice(-1)[0].username}
+            Logged In as {activeUser}
           </Typography>
         </AppBar>
       </ThemeProvider>

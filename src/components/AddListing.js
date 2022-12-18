@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Box,
   TextField,
@@ -14,6 +15,9 @@ import MyMap from './Map';
 
 const AddListing = (props) => {
   // console.log(props);
+
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState(true);
 
   const [listing, setListing] = useState({
@@ -24,12 +28,15 @@ const AddListing = (props) => {
     id: props.listings.length + 1,
   });
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const checkOpen = () => {
+    // console.log('CheckOpen has been called.');
+    // console.log(open);
+    return open === true ? navigate('/listings') : null;
   };
 
   const handleClose = () => {
     setOpen(false);
+    checkOpen();
   };
 
   const handleTextChange = (e) => {
@@ -58,9 +65,9 @@ const AddListing = (props) => {
 
   return (
     <>
-      <Button variant='contained' color='primary' onClick={handleClickOpen}>
+      {/* <Button variant='contained' color='primary' onClick={handleClickOpen}>
         Add New Listing
-      </Button>
+      </Button> */}
       <Dialog open={open} onClose={handleClose} maxWidth='xl'>
         <DialogTitle>Add New Business Listing</DialogTitle>
         <DialogContent>
@@ -68,7 +75,7 @@ const AddListing = (props) => {
             To add a new listing, simply fill out the form below and click
             "Submit".
           </DialogContentText>
-          <Box sx={{ display: 'flex', gap: '1em' }}>
+          <Box sx={{ display: 'flex', gap: '1em', minWidth: '867px' }}>
             <Box sx={{ width: '50%', maxWidth: '520px' }}>
               <TextField
                 required
@@ -134,7 +141,9 @@ const AddListing = (props) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Submit</Button>
+          <Link to='/listings'>
+            <Button onClick={handleSubmit}>Submit</Button>
+          </Link>
         </DialogActions>
       </Dialog>
     </>
