@@ -1,13 +1,16 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [Click Here](https://stevies-super-cool-business-directory.netlify.app/login) to access the deployed application.
+
+_This application is not connected to a backend, and new data will not be saved.
+Therefore, login credentials are required, but anything can be entered._
 
 ## Dependency List
 
 - [x] [@mui/material @emotion/react @emotion/styled](https://mui.com/material-ui/getting-started/installation/)
 - [x] [@mui/icons-material](https://mui.com/material-ui/getting-started/installation/)
 - [x] [cookie](https://www.npmjs.com/package/cookie)
-- [x] [google-map-react](https://www.npmjs.com/package/google-map-react)
+- [x] [react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api)
 - [x] [react-redux](https://www.npmjs.com/package/react-redux)
 - [x] [react-router](https://www.npmjs.com/package/react-router)
 - [x] [react-router-dom](https://www.npmjs.com/package/react-router-dom)
