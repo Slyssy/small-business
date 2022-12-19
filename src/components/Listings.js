@@ -57,6 +57,12 @@ const Listings = (props) => {
                       onClick={() => props.deleteListing(idx)}
                       className='icon text-red'
                       color='warning'
+                      sx={{
+                        '&:hover': {
+                          backgroundColor: 'transparent',
+                          cursor: 'pointer',
+                        },
+                      }}
                     />
                   </TableCell>
                 ) : null}
