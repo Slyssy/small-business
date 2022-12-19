@@ -10,7 +10,9 @@ Therefore, login credentials are required, but anything can be entered._
 - [x] [@mui/material @emotion/react @emotion/styled](https://mui.com/material-ui/getting-started/installation/)
 - [x] [@mui/icons-material](https://mui.com/material-ui/getting-started/installation/)
 - [x] [cookie](https://www.npmjs.com/package/cookie)
-- [x] [react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api)
+- [x]
+  [react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api)
+- [x] [react-geocode](https://www.npmjs.com/package/react-geocode)
 - [x] [react-redux](https://www.npmjs.com/package/react-redux)
 - [x] [react-router](https://www.npmjs.com/package/react-router)
 - [x] [react-router-dom](https://www.npmjs.com/package/react-router-dom)
