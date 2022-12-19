@@ -1,9 +1,13 @@
 # Getting Started with Create React App
 
-### [Click Here](https://stevies-super-cool-business-directory.netlify.app/login) to access the deployed application.
+### [Click Here](https://stevies-super-cool-business-directory.netlify.app/login) to access the deployed application. _(For some reason when you click on this link, it says page not found. Just click on the ***"Back to Our Site"*** link, and it open the application.)_
+
+---
 
 _This application is not connected to a backend, and new data will not be saved.
 Therefore, login credentials are required, but anything can be entered._
+
+---
 
 ## Dependency List
 
