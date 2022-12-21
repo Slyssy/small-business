@@ -43,7 +43,7 @@ const state = {
     },
   ],
   coordinates: [],
-  dialogOpen: false,
+  // dialogOpen: false,
 };
 
 export default state;

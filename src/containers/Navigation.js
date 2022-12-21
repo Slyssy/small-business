@@ -9,9 +9,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const MapDispatchToProps = (dispatch) => {
-  return {
-    openDialog: () => dispatch(openDialog()),
-  };
-};
-export default connect(mapStateToProps, MapDispatchToProps)(Navigation);
+// const MapDispatchToProps = (dispatch) => {
+//   return {
+//     openDialog: () => dispatch(openDialog()),
+//   };
+// };
+export default connect(mapStateToProps, null)(Navigation);
